@@ -1,0 +1,33 @@
+﻿@model Y4C2.Models.AddContent
+
+@{
+    ViewData["Title"] = "PlayVideo";
+}
+
+<title>Y4C</title>
+<br />
+<h2>@Model.Title</h2>
+<hr />
+<br />
+
+<iframe width="560"
+        height="315"
+        src="@Model.Video"
+        frameborder="0"
+        allowfullscreen></iframe><br />
+
+<iframe width="560"
+        height="100"
+        src="@Model.Audio"
+        frameborder="0"
+        allowfullscreen></iframe>
+<br />
+
+<p>@Model.Description</p>
+
+<hr />
+
+
+@Html.Raw(Model.BlogContent)
+
+

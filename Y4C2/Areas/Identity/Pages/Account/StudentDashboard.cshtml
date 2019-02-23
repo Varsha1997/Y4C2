@@ -1,0 +1,140 @@
+﻿@page
+@model StudentDashboardModel
+
+@inject UserManager<IdentityUser> UserManager
+
+
+@{
+    ViewData["Title"] = "StudentDashboard";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/StudentDashboard.css">
+<link rel="stylesheet" type="text/css" href="~/css/main.css">
+
+
+<header class="jumbotron my-4">
+    <h1 class="display-3">Hello, @UserManager.GetUserName(User)</h1>
+    <!--<a href="#" class="btn btn-primary btn-lg">Call to action!</a>-->
+
+    <div class="limiter">
+
+
+        <!-- .site-title -->
+    </div>
+    <!-- .centered -->
+</header>
+<!-- .masthead -->
+
+<main class="main-area">
+
+    <div class="centered">
+
+        <section class="cards">
+
+            <article class="card">
+                <a href="#">
+                    <figure class="thumbnail">
+                        <img src="~/images/Yoga4Change.png" alt="meow">
+                    </figure>
+                    <div class="card-content">
+                        <h2>Lesson 1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam.</p>
+                    </div>
+                    <!-- .card-content -->
+                </a>
+            </article>
+            <!-- .card -->
+
+            <article class="card">
+                <a href="#">
+                    <figure class="thumbnail">
+                        <img src="~/images/Yoga4Change.png" alt="meow">
+                    </figure>
+                    <div class="card-content">
+                        <h2>Lesson 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam?</p>
+                    </div>
+                    <!-- .card-content -->
+                </a>
+            </article>
+            <!-- .card -->
+
+            <article class="card">
+                <a href="#">
+                    <figure class="thumbnail">
+                        <img src="~/images/Yoga4Change.png" alt="meow">
+                    </figure>
+                    <div class="card-content">
+                        <h2>Lesson 3</h2>
+                        <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+                    </div>
+                    <!-- .card-content -->
+                </a>
+            </article>
+            <!-- .card -->
+
+            <article class="card">
+                <a href="#">
+                    <figure class="thumbnail">
+                        <img src="~/images/Yoga4Change.png" alt="meow">
+                    </figure>
+                    <div class="card-content">
+                        <h2>Lesson 4</h2>
+                        <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+                    </div>
+                    <!-- .card-content -->
+                </a>
+            </article>
+            <!-- .card -->
+
+            <article class="card">
+                <a href="#">
+                    <figure class="thumbnail">
+                        <img src="~/images/Yoga4Change.png" alt="meow">
+                    </figure>
+                    <div class="card-content">
+                        <h2>Lesson 5</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+                    </div>
+                    <!-- .card-content -->
+                </a>
+            </article>
+            <!-- .card -->
+
+            <article class="card">
+                <a href="#">
+                    <figure class="thumbnail">
+                        <img src="~/images/Yoga4Change.png" alt="meow">
+                    </figure>
+                    <div class="card-content">
+                        <h2>Lesson 6</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+                    </div>
+                    <!-- .card-content -->
+                </a>
+            </article>
+            <!-- .card -->
+
+            <article class="card">
+                <a href="#">
+                    <figure class="thumbnail">
+                        <img src="~/images/Yoga4Change.png" alt="meow">
+                    </figure>
+                    <div class="card-content">
+                        <h2>Lesson 7</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+                    </div>
+                    <!-- .card-content -->
+                </a>
+            </article>
+            <!-- .card -->
+
+        </section>
+        <!-- .cards -->
+
+    </div>
+    <!-- .centered -->
+
+</main>
