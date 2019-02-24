@@ -36,6 +36,7 @@ namespace Y4C2.Data.Migrations
                     EmailConfirmed = table.Column<bool>(nullable: false),
                     Dob = table.Column<string>(nullable: true),
                     TakenYogaClass = table.Column<string>(nullable: true),
+                    RoleId = table.Column<string>(nullable: false),
                     PasswordHash = table.Column<string>(nullable: true),
                     SecurityStamp = table.Column<string>(nullable: true),
                     ConcurrencyStamp = table.Column<string>(nullable: true),

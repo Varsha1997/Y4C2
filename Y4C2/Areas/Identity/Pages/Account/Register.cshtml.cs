@@ -106,7 +106,7 @@ namespace Y4C2.Areas.Identity.Pages.Account
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return Redirect("/Account/StudentDashboard");
+                    return Redirect("/Identity/Account/StudentDashboard");
                 }
                 foreach (var error in result.Errors)
                 {

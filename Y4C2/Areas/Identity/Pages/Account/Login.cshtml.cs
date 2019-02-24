@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Y4C2.Models;
+using Microsoft.AspNetCore.Http;
+
 
 namespace Y4C2.Areas.Identity.Pages.Account
 {
@@ -17,11 +20,16 @@ namespace Y4C2.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly UserManager<IdentityUser> _userManager;
+        //private readonly RoleManager<IdentityUser> roleManager;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
+
+        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger, UserManager<IdentityUser> userManager)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _userManager = userManager;
+           // _roleManager = roleManager;
         }
 
         [BindProperty]
@@ -42,6 +50,8 @@ namespace Y4C2.Areas.Identity.Pages.Account
             [Required]
             [DataType(DataType.Password)]
             public string Password { get; set; }
+
+            public string RoleId { get; set; }
 
             [Display(Name = "Remember me?")]
             public bool RememberMe { get; set; }
@@ -73,10 +83,20 @@ namespace Y4C2.Areas.Identity.Pages.Account
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Username, Input.Password, Input.RememberMe, lockoutOnFailure: true);
+
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User logged in.");
-                    return Redirect("/Account/StudentDashboard");
+                    if (Input.Username == "Admin")
+                    {
+                        _logger.LogInformation("User logged in.");
+                        return Redirect("/Identity/Account/AdminDashboard");
+                    }
+                    else
+                    {
+                        _logger.LogInformation("User logged in.");
+                        return Redirect("/Identity/Account/StudentDashboard");
+                    }
+                    
                 }
                 if (result.RequiresTwoFactor)
                 {
@@ -97,5 +117,7 @@ namespace Y4C2.Areas.Identity.Pages.Account
             // If we got this far, something failed, redisplay form
             return Page();
         }
+
+        
     }
 }
