@@ -1,7 +1,8 @@
-﻿@import url('//fonts.googleapis.com/css?family=Josefin+Slab:400,700');
+﻿/*@import url('//fonts.googleapis.com/css?family=Josefin+Slab:400,700');*/
 
 body {
-    overflow:hidden;
+    overflow: hidden;
+    font-family: sans-serif;
 }
 
 a {
@@ -103,9 +104,9 @@ a {
 
 .st-scroll,
 .st-panel {
-    position: relative;
+    position:relative;
     width: 100%;
-    height: 100%;
+    height: 102%;
 }
 
 .st-scroll {

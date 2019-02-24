@@ -1,0 +1,71 @@
+﻿@model Y4C2.Models.AddContent
+
+@{
+    ViewData["Title"] = "ContentDetails";
+}
+
+
+<br />
+<h2>Content Details</h2>
+<hr />
+
+<div>
+
+    <hr />
+
+
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ArchiveStatus)
+        </dt>
+        <dd>
+            @Model.ArchiveStatus
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Video)
+        </dt>
+        <dd>
+            <iframe width="560"
+                    height="315"
+                    src="@Model.Video"
+                    frameborder="0"
+                    allowfullscreen></iframe><br />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Audio)
+        </dt>
+        <dd>
+            <iframe width="560"
+                    height="100"
+                    src="@Model.Audio"
+                    frameborder="0"
+                    allowfullscreen></iframe>
+            <br />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BlogContent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BlogContent)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="ManageContent">Back</a>
+</div>

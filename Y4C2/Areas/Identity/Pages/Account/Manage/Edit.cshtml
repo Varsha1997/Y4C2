@@ -1,0 +1,139 @@
+﻿@model Y4C2.Models.AddContent
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+
+
+<br />
+<h2>Edit</h2>
+<hr />
+
+<div class="flex-container">
+    <div class="flex-container">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="flex-container"></div>
+            <input type="hidden" asp-for="ArchiveStatus">
+            <input type="hidden" asp-for="Id" />
+            <div class="container">
+                <div class="row">
+                    <div id="leftCol" class="col-sm-4" style="border-right:solid; border-right-color:#E7E7E7">
+                        <div class="form-group">
+                            <label class="form-group">Current Title: @Model.Title</label>
+                        </div>
+                    </div>
+                    <div id="rightCol" class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">Enter new title below</label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div id="leftCol" class="col-sm-4" style="border-right:solid; border-right-color:#E7E7E7">
+                        <div class="form-group">
+                            <label class="form-group">Current Description: @Model.Description</label>
+                        </div>
+                    </div>
+                    <div id="rightCol" class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">New Description</label>
+                            <input asp-for="Description" class="form-control" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div id="leftCol" class="col-sm-4" style="border-right:solid; border-right-color:#E7E7E7">
+                        <div class="flex-container">
+                            <label class="form-group">
+                                Current Video:
+                                <iframe width="365"
+                                        height="200"
+                                        src="@Model.Video"
+                                        frameborder="0"
+                                        allowfullscreen></iframe>
+                            </label>
+                        </div>
+                    </div>
+                    <div id="rightCol" class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">New Video URL</label>
+                            <input asp-for="Video" class="form-control" />
+                            <span asp-validation-for="Video" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div id="leftCol" class="col-sm-4" style="border-right:solid; border-right-color:#E7E7E7">
+                        <div class="form-group">
+                            <label class="form-group">
+                                Current Audio:
+                                <iframe width="365"
+                                        height="100"
+                                        src="@Model.Audio"
+                                        frameborder="0"
+                                        allowfullscreen></iframe>
+                            </label>
+                        </div>
+                    </div>
+                    <div id="rightCol" class="flex-container">
+                        <div class="flex-container">
+                            <label class="flex-container">New Audio URL</label>
+                            <input asp-for="Audio" class="flex-container" />
+                            <span asp-validation-for="Audio" class="flex-container"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div id="leftCol" class="col-sm-4">
+                        <div class="form-group">
+                            <label class="form-group">
+                                Edit Blog: <br />
+
+                            </label>
+                        </div>
+                    </div>
+                    <div id="rightCol" class="col-md-4" style="border-left:solid; border-left-color:#E7E7E7">
+                        <div class="form-group">
+                            <label asp-for="BlogContent" class="control-label"></label>
+                            <textarea id="summernote" name="BlogContent"> @Html.Raw(Model.BlogContent)</textarea>
+                            <script>
+                                $('#summernote').summernote({
+                                    tabsize: 2,
+                                    height: 600,
+                                    width: 700,
+                                });
+                            </script>
+                            <span asp-validation-for="BlogContent" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ManageContent">Cancel</a>
+</div>

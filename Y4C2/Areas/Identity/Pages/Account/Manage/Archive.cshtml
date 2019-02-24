@@ -1,0 +1,42 @@
+﻿@model Y4C2.Models.AddContent
+
+@{
+    ViewData["Title"] = "Archive";
+}
+
+<br />
+<h2>Archive</h2>
+<hr />
+<h4>Are you sure you want to archive this post?</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Archive">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Title" />
+            <input type="hidden" asp-for="Video" />
+            <input type="hidden" asp-for="Description" />
+            <input type="hidden" asp-for="Audio" />
+            <input type="hidden" asp-for="BlogContent" />
+            <input type="hidden" asp-for="BlogAuthor" />
+
+            <div class="form-group">
+                <label class="control-label">Change Archive Status:</label>
+                <select class="form-control" name="ArchiveStatus">
+                    <option disabled selected="selected">Choose Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+                <span asp-validation-for="ArchiveStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ManageContent">Cancel</a>
+</div>

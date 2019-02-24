@@ -1,0 +1,87 @@
+﻿@model System.Collections.Generic.IEnumerable<Y4C2.Models.AddContent>
+    @{
+    ViewData["Title"] = "ManageContent";
+    }
+
+    <br />
+    <h2>Manage Content</h2>
+    <hr />
+
+    <h4>Active Posts</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @Model)
+        {
+            if (item.ArchiveStatus == "Active")
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td align="right">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="ContentDetails" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="DeleteContent" asp-route-id="@item.Id">Delete</a> |
+                    <a asp-action="Archive" asp-route-id="@item.Id">Archive</a>
+                </td>
+            </tr>
+            }
+
+
+        }
+        </tbody>
+    </table>
+    <h4>Inactive Posts</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @Model)
+            {
+                if (item.ArchiveStatus != "Active")
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td align="right">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="ContentDetails" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="DeleteContent" asp-route-id="@item.Id">Delete</a> |
+                    <a asp-action="Archive" asp-route-id="@item.Id">Archive</a>
+                </td>
+            </tr>
+                }
+
+
+            }
+        </tbody>
+
+
+    </table>

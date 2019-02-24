@@ -3,12 +3,14 @@
 }
 
 p {
-    color: #666;
+    color: #00A38E;
+    font-weight: bold;
 }
 
 h2 {
     font-size: 2em;
-    color: #00A38E;
+    color: #49B869;
+    font-weight: bold;
 }
 
 .centered {
@@ -27,8 +29,8 @@ Header styles minus menu
 --------------------------------------------------------------*/
 
 .masthead {
-    background: #e74c3c;
-    box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+    background: #00A38E;
+    box-shadow: 3px 3px 5px hsl(0, 0%, 70%);
 }
 
 .site-title {
@@ -36,9 +38,10 @@ Header styles minus menu
     padding: 1em 0;
     font-size: 2em;
     font-weight: 300;
-    text-align: center;
-    color: black;
+    text-align: left;
+    color: white;
 }
+
 
 @media screen and (min-width: 44.44em) {
     .site-title {
@@ -68,7 +71,7 @@ body {
 }
 
 .site-title {
-    color: #00A38E;
+    color: white;
 }
 
 .card {
@@ -99,10 +102,7 @@ body {
         font-size: 95%;
     }
 
-img {
-    width: 100%;
-    height: auto;
-}
+
 
 /* Flexbox styles */
 @media screen and (min-width: 40em) {
