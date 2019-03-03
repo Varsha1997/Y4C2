@@ -94,7 +94,7 @@ namespace Y4C2.Areas.Identity.Pages.Account
                     else
                     {
                         _logger.LogInformation("User logged in.");
-                        return Redirect("/Identity/Account/StudentDashboard");
+                        return Redirect("/Account/StudentDashboard");
                     }
                     
                 }

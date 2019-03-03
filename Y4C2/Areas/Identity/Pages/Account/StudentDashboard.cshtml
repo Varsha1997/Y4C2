@@ -1,5 +1,6 @@
-﻿@page
-@model StudentDashboardModel
+﻿@model System.Collections.Generic.IEnumerable<Y4C2.Models.AddContent>
+
+
 
 @inject UserManager<IdentityUser> UserManager
 
@@ -9,16 +10,15 @@
 }
 
 <link rel="stylesheet" href="~/css/studentLayout.css">
-
 <br />
 <br />
 <br />
 <header class="masthead clear">
     <div class="centered">
 
-        <div class="site-branding">
-            <h1 class="site-title">Welcome, @UserManager.GetUserName(User)</h1>
-        </div>
+            <div class="site-branding">
+                <h1 class="site-title">Welcome, @UserManager.GetUserName(User)</h1>
+            </div>
         <!-- .site-title -->
     </div>
     <!-- .centered -->
@@ -28,111 +28,113 @@
 <main class="main-area">
 
     <div class="centered">
+        @foreach (var item in @Model)
 
-        <section class="cards">
+        {
+            <section class="cards">
 
-            <article class="card">
-                <a href="#">
-                    <figure class="thumbnail">
-                        <img src="~/images/YogaImage.jpg" alt="meow">
-                    </figure>
-                    <div class="card-content">
-                        <h2>Lesson 1</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam.</p>
-                    </div>
-                    <!-- .card-content -->
-                </a>
-            </article>
-            <!-- .card -->
+                <article class="card">
+                    <a href="/Home/PlayVideo/@item.Id">@item.Id
+                        <figure class="thumbnail">
+                            <img src="~/images/YogaImage.jpg" alt="meow">
+                        </figure>
+                        <div class="card-content">
+                            <h2>@item.Title</h2>
+                            <p> @item.Description</p>
+                        </div>
+                        <!-- .card-content -->
+                    </a>
+                </article>
+                <!-- .card -->
 
-            <article class="card">
-                <a href="#">
-                    <figure class="thumbnail">
-                        <img src="~/images/YogaImage.jpg" alt="meow">
-                    </figure>
-                    <div class="card-content">
-                        <h2>Lesson 2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum explicabo consequatur consectetur fugit molestias perferendis, sint error iste ut, facilis sunt natus optio dolor nesciunt laboriosam obcaecati corporis numquam?</p>
-                    </div>
-                    <!-- .card-content -->
-                </a>
-            </article>
-            <!-- .card -->
+                <article class="card">
+                    <a href="#">
+                        <figure class="thumbnail">
+                            <img src="~/images/YogaImage.jpg" alt="meow">
+                        </figure>
+                        <div class="card-content">
+                            <h2>Lesson 2</h2>
+                            <p>  non-profit organization that achieves meaningful change for veterans, incarcerated individuals, vulnerable youth, and those dealing with substance abuse. Our purpose-driven yoga program enables us to heal and empower these underserved populations, creating healthier, safer communities, one class at a time.</p>
+                        </div>
+                        <!-- .card-content -->
+                    </a>
+                </article>
+                <!-- .card -->
 
-            <article class="card">
-                <a href="#">
-                    <figure class="thumbnail">
-                        <img src="~/images/YogaImage.jpg" alt="meow">
-                    </figure>
-                    <div class="card-content">
-                        <h2>Lesson 3</h2>
-                        <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
-                    </div>
-                    <!-- .card-content -->
-                </a>
-            </article>
-            <!-- .card -->
+                <article class="card">
+                    <a href="#">
+                        <figure class="thumbnail">
+                            <img src="~/images/YogaImage.jpg" alt="meow">
+                        </figure>
+                        <div class="card-content">
+                            <h2>Lesson 3</h2>
+                            <p>  non-profit organization that achieves meaningful change for veterans, incarcerated individuals, vulnerable youth, and those dealing with substance abuse. Our purpose-driven yoga program enables us to heal and empower these underserved populations, creating healthier, safer communities, one class at a time.</p>
+                        </div>
+                        <!-- .card-content -->
+                    </a>
+                </article>
+                <!-- .card -->
 
-            <article class="card">
-                <a href="#">
-                    <figure class="thumbnail">
-                        <img src="~/images/YogaImage.jpg" alt="meow">
-                    </figure>
-                    <div class="card-content">
-                        <h2>Lesson 4</h2>
-                        <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
-                    </div>
-                    <!-- .card-content -->
-                </a>
-            </article>
-            <!-- .card -->
+                <article class="card">
+                    <a href="#">
+                        <figure class="thumbnail">
+                            <img src="~/images/YogaImage.jpg" alt="meow">
+                        </figure>
+                        <div class="card-content">
+                            <h2>Lesson 4</h2>
+                            <p>  non-profit organization that achieves meaningful change for veterans, incarcerated individuals, vulnerable youth, and those dealing with substance abuse. Our purpose-driven yoga program enables us to heal and empower these underserved populations, creating healthier, safer communities, one class at a time.</p>
+                        </div>
+                        <!-- .card-content -->
+                    </a>
+                </article>
+                <!-- .card -->
 
-            <article class="card">
-                <a href="#">
-                    <figure class="thumbnail">
-                        <img src="~/images/YogaImage.jpg" alt="meow">
-                    </figure>
-                    <div class="card-content">
-                        <h2>Lesson 5</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
-                    </div>
-                    <!-- .card-content -->
-                </a>
-            </article>
-            <!-- .card -->
+                <article class="card">
+                    <a href="#">
+                        <figure class="thumbnail">
+                            <img src="~/images/YogaImage.jpg" alt="meow">
+                        </figure>
+                        <div class="card-content">
+                            <h2>Lesson 5</h2>
+                            <p>  non-profit organization that achieves meaningful change for veterans, incarcerated individuals, vulnerable youth, and those dealing with substance abuse. Our purpose-driven yoga program enables us to heal and empower these underserved populations, creating healthier, safer communities, one class at a time.</p>
+                        </div>
+                        <!-- .card-content -->
+                    </a>
+                </article>
+                <!-- .card -->
 
-            <article class="card">
-                <a href="#">
-                    <figure class="thumbnail">
-                        <img src="~/images/YogaImage.jpg" alt="meow">
-                    </figure>
-                    <div class="card-content">
-                        <h2>Lesson 6</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
-                    </div>
-                    <!-- .card-content -->
-                </a>
-            </article>
-            <!-- .card -->
+                <article class="card">
+                    <a href="#">
+                        <figure class="thumbnail">
+                            <img src="~/images/YogaImage.jpg" alt="meow">
+                        </figure>
+                        <div class="card-content">
+                            <h2>Lesson 6</h2>
+                            <p>  non-profit organization that achieves meaningful change for veterans, incarcerated individuals, vulnerable youth, and those dealing with substance abuse. Our purpose-driven yoga program enables us to heal and empower these underserved populations, creating healthier, safer communities, one class at a time.</p>
+                        </div>
+                        <!-- .card-content -->
+                    </a>
+                </article>
+                <!-- .card -->
 
-            <article class="card">
-                <a href="#">
-                    <figure class="thumbnail">
-                        <img src="~/images/YogaImage.jpg" alt="meow">
-                    </figure>
-                    <div class="card-content">
-                        <h2>Lesson 7</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
-                    </div>
-                    <!-- .card-content -->
-                </a>
-            </article>
-            <!-- .card -->
+                <article class="card">
+                    <a href="#">
+                        <figure class="thumbnail">
+                            <img src="~/images/YogaImage.jpg" alt="meow">
+                        </figure>
+                        <div class="card-content">
+                            <h2>Lesson 7</h2>
+                            <p>  non-profit organization that achieves meaningful change for veterans, incarcerated individuals, vulnerable youth, and those dealing with substance abuse. Our purpose-driven yoga program enables us to heal and empower these underserved populations, creating healthier, safer communities, one class at a time.</p>
+                        </div>
+                        <!-- .card-content -->
+                    </a>
+                </article>
+                <!-- .card -->
 
-        </section>
-        <!-- .cards -->
-
-    </div>
+            </section>
+            <!-- .cards -->
+        }
+        </div>
     <!-- .centered -->
 
 </main>

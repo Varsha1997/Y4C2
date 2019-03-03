@@ -1,8 +1,10 @@
-﻿@model Y4C2.Models.AddContent
-
+﻿@page
+@model AddContentModel
 @{
-    ViewData["Title"] = "Add Content";
+    ViewData["Title"] = "Change password";
 }
+
+
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -17,7 +19,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-controller="Content" asp-action="AddContent" asp-method="Post" id="add-form">
+        <form asp-controller="Home" asp-action="AddContent" asp-method="Post" id="add-form">
 
             <div class="form-group">
                 <label for="Title">Title</label>

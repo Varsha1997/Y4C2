@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Y4C2.Data;
+using Y4C2.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -40,7 +41,13 @@ namespace Y4C2
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            var con = "Data Source=yoga4change20181004115912dbserver.database.windows.net;Initial Catalog=AddContentDB;Integrated Security=False;User ID=n00931554;Password=John3:16;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            services.AddDbContext<AddContentDBContext>(options => options.UseSqlServer(con));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

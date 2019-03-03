@@ -1,0 +1,52 @@
+﻿@model System.Collections.Generic.IEnumerable<Y4C2.Models.AddContent>
+
+
+        @{
+    ViewData["Title"] = "StudentDashboard";
+        }
+
+        <link rel="stylesheet" href="~/css/studentLayout.css">
+        <br />
+        <br />
+        <br />
+        <header class="masthead clear">
+            <div class="centered">
+
+                <div class="site-branding">
+                    <h1 class="site-title">Welcome, </h1>
+                </div>
+                <!-- .site-title -->
+            </div>
+            <!-- .centered -->
+        </header>
+        <!-- .masthead -->
+
+        <main class="main-area">
+
+            <div class="centered">
+                @foreach (var item in @Model)
+
+        {
+                    <section class="cards">
+
+                        <article class="card">
+                            <a href="/Manage/PlayVideo/@item.Id">
+                                <figure class="thumbnail">
+                                    <img src="~/images/YogaImage.jpg" alt="Y4C">
+                                </figure>
+                                <div class="card-content">
+                                    <h2>@item.Title</h2>
+                                    <p> @item.Description</p>
+                                </div>
+                                <!-- .card-content -->
+                            </a>
+                        </article>
+                        <!-- .card -->
+                    </section>
+                    <!-- .cards -->
+                   
+                    }
+                </div>
+ <!-- .centered -->
+
+</main>

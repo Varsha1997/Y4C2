@@ -74,7 +74,7 @@ namespace Y4C2.Areas.Identity.Pages.Account
             [DataType(DataType.Date, ErrorMessage = "Invalid Date of Birth")]
             public DateTime Dob { get; set; }
 
-            [Display(Name = "Have You Taken A Yoga Class Before?")]
+            [Display(Name = "Have You Taken A Yoga 4 Change Class Before?")]
             [Required(ErrorMessage = "Response Required")]
             public string TakenYogaClass { get; set; }
         }
@@ -106,7 +106,7 @@ namespace Y4C2.Areas.Identity.Pages.Account
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return Redirect("/Identity/Account/StudentDashboard");
+                    return Redirect("/Account/StudentDashboard");
                 }
                 foreach (var error in result.Errors)
                 {

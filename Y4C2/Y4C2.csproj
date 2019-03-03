@@ -61,10 +61,13 @@
     <Content Update="Areas\Identity\Pages\Account\AdminDashboard.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Areas\Identity\Pages\Account\Manage\AddContent.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Areas\Identity\Pages\Account\Manage\Archive.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Areas\Identity\Pages\Account\Manage\AddContent.cshtml">
+    <Content Update="Areas\Identity\Pages\Account\Manage\AddContentExamp.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Areas\Identity\Pages\Account\Manage\ContentDetails.cshtml">

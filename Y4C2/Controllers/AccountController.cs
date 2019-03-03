@@ -107,8 +107,8 @@ namespace Y4C2.Controllers
 
         public ActionResult StudentDashboard()
         {
-            ViewBag.sessionv = HttpContext.Session.GetString("User");
-            return View();
+            //ViewBag.sessionv = HttpContext.Session.GetString("User");
+            return View(DBcontext.AC.ToList());
         }
 
         public ActionResult AdminDashboard()

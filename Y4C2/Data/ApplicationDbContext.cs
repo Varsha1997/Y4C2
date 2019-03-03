@@ -12,5 +12,20 @@ namespace Y4C2.Data
             : base(options)
         {
         }
-    }
+
+       // protected override void OnModelCreating(ModelBuilder modelBuilder)
+       // {
+        //    modelBuilder.Entity<AddContent>()
+         //       .Property(prop => prop.Id)
+         //       .ValueGeneratedOnAdd();
+
+          //  base.OnModelCreating(modelBuilder);
+      //  }
+
+      //  public AddContentDBContext(DbContextOptions<AddContentDBContext> options) : base(options) { }
+       // public DbSet<AddContent> AC { get; set; }
+       // public DbSet<Account> Account { get; set; }
+        //public DbSet<Y4C2.Models.Survey> Survey { get; set; }
+    //}
+}
 }
