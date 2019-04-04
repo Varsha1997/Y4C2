@@ -1,0 +1,72 @@
+﻿/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding-top: 50px;
+    width: 200px;
+    background-color: #F8F8F8;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    text-align: right;
+}
+
+    /* Sidebar links */
+    .sidebar a {
+        display: block;
+        color: #032b52;
+        padding: 16px;
+        text-decoration: none;
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 14px;
+        letter-spacing: 0em;
+        font-weight: 700;
+        font-style: normal;
+        text-transform: uppercase;
+        
+    }
+
+        /* Active/current link */
+        .sidebar a.active {
+            background-color: #F8F8F8;
+            color: #00a38e;
+        }
+
+        /* Links on mouse-over */
+        .sidebar a:hover:not(.active) {
+            color: #032b52;
+        }
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+    margin-left: 150px;
+    padding: 60px 10px;
+    height: auto;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+        .sidebar a {
+            float: left;
+        }
+
+    div.content {
+        margin-left: 0;
+    }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
