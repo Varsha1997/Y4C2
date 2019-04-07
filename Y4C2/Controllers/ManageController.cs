@@ -39,7 +39,8 @@ namespace Y4C2.Controllers
             {
                 throw new Exception();
             }
-            return RedirectToAction(nameof(PlayVideo), new { id = add.Id });
+            return RedirectToAction(nameof(ManageContent), new { id = add.Id });
+            
         }
 
         //public ViewResult PlayVideo() => View();

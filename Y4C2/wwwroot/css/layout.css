@@ -3,12 +3,17 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: transparent;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    
 }
 
 li {
     float: left;
-    border-right: 1px solid #bbb;
+    /* border-right: 1px solid #bbb; */
 }
 
     li:last-child {
@@ -17,7 +22,7 @@ li {
 
     li a {
         display: block;
-        color: white;
+        color: #032b52;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -28,7 +33,8 @@ li {
         }
 
 .active {
-    background-color: #4CAF50;
+    background-color: transparent;
+    
 }
 
 

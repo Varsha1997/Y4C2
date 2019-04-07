@@ -1,12 +1,23 @@
 ﻿@model System.Collections.Generic.IEnumerable<Y4C2.Models.AddContent>
-    @{
+@{
     ViewData["Title"] = "ManageContent";
-    }
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/SideNav.css" />
+</head>
 
-    <br />
-    <h2>Manage Content</h2>
-    <hr />
+<!-- The sidebar -->
+<div class="sidebar">
+    <a asp-controller="Identity/Account" asp-action="AdminDashboard">Home</a>
+    <a asp-controller="Manage" asp-action="AddContent">Create</a>
+    <a class="active" asp-controller="Manage" asp-action="ManageContent">Manage</a>
+    
+</div>
 
+<!-- Page content -->
+<div class="content">
+    
+   
     <h4>Active Posts</h4>
     <table class="table">
         <thead>
@@ -22,27 +33,27 @@
         </thead>
         <tbody>
             @foreach (var item in @Model)
-        {
-            if (item.ArchiveStatus == "Active")
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td align="right">
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="ContentDetails" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="DeleteContent" asp-route-id="@item.Id">Delete</a> |
-                    <a asp-action="Archive" asp-route-id="@item.Id">Archive</a>
-                </td>
-            </tr>
+                if (item.ArchiveStatus == "Active")
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td align="right">
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="ContentDetails" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="DeleteContent" asp-route-id="@item.Id">Delete</a> |
+                            <a asp-action="Archive" asp-route-id="@item.Id">Archive</a>
+                        </td>
+                    </tr>
+                }
+
+
             }
-
-
-        }
         </tbody>
     </table>
     <h4>Inactive Posts</h4>
@@ -63,20 +74,20 @@
             {
                 if (item.ArchiveStatus != "Active")
                 {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td align="right">
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="ContentDetails" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="DeleteContent" asp-route-id="@item.Id">Delete</a> |
-                    <a asp-action="Archive" asp-route-id="@item.Id">Archive</a>
-                </td>
-            </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td align="right">
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="ContentDetails" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="DeleteContent" asp-route-id="@item.Id">Delete</a> |
+                            <a asp-action="Archive" asp-route-id="@item.Id">Archive</a>
+                        </td>
+                    </tr>
                 }
 
 
@@ -85,3 +96,4 @@
 
 
     </table>
+    </div>

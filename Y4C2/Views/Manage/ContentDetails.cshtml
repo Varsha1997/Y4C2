@@ -3,69 +3,89 @@
 @{
     ViewData["Title"] = "ContentDetails";
 }
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/SideNav.css" />
+</head>
 
+<!-- The sidebar -->
+<div class="sidebar">
+    <a asp-controller="Identity/Account" asp-action="AdminDashboard">Home</a>
+    <a asp-controller="Manage" asp-action="AddContent">Create</a>
+    <a class="active" asp-controller="Manage" asp-action="ManageContent">Manage</a>
+    
+</div>
 
-<br />
-<h2>Content Details</h2>
-<hr />
-
-<div>
-
+<!-- Page content -->
+<div class="content">
+    <br />
+    <h2 align="center">Details</h2>
     <hr />
 
-
-
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ArchiveStatus)
-        </dt>
-        <dd>
-            @Model.ArchiveStatus
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Video)
-        </dt>
-        <dd>
-            <iframe width="560"
-                    height="315"
-                    src="@Model.Video"
-                    frameborder="0"
-                    allowfullscreen></iframe><br />
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Audio)
-        </dt>
-        <dd>
-            <iframe width="560"
-                    height="100"
-                    src="@Model.Audio"
-                    frameborder="0"
-                    allowfullscreen></iframe>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                <label>Archive Status</label>
+            </dt>
+            <dd>
+                @Model.ArchiveStatus
+            </dd>
+            <br /><br />
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
             <br />
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.BlogContent)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.BlogContent)
-        </dd>
+            <br />
+            <dt>
+                @Html.DisplayNameFor(model => model.Video)
+            </dt>
+            <dd>
+                <iframe width="560"
+                        height="315"
+                        src="@Model.Video"
+                        frameborder="0"
+                        allowfullscreen></iframe><br />
+            </dd>
+            <br />
+            <br />
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
 
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="ManageContent">Back</a>
-</div>
+            </dd>
+            <br />
+            <br />
+            <dt>
+                @Html.DisplayNameFor(model => model.Audio)
+            </dt>
+            <dd>
+                <iframe width="560"
+                        height="100"
+                        src="@Model.Audio"
+                        frameborder="0"
+                        allowfullscreen></iframe>
+                <br />
+            </dd>
+            <br />
+            <br />
+            <dt>
+                @Html.DisplayNameFor(model => model.BlogContent)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.BlogContent)
+            </dd>
+
+        </dl>
+    </div>
+    <br /><br />
+    <div align="center">
+        <input type="button" value="Back" class="btn btn-default" onclick="location.href='@Url.Action("ManageContent", "Manage")'" />
+        
+        <a class="btn btn-default" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
+
+    </div>
+    </div>
