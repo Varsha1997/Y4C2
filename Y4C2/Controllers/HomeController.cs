@@ -30,6 +30,13 @@ namespace Y4C2.Controllers
             return View();
         }
 
+        public IActionResult Team()
+        {
+            ViewData["Message"] = "Your Team page.";
+
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
