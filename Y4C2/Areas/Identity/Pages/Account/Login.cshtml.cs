@@ -89,7 +89,8 @@ namespace Y4C2.Areas.Identity.Pages.Account
                     if (Input.Username == "Admin")
                     {
                         _logger.LogInformation("User logged in.");
-                        return Redirect("/Identity/Account/AdminDashboard");
+                        //return Redirect("/Identity/Account/AdminDashboard");
+                        return Redirect("/Manage/AdminHome");
                     }
                     else
                     {

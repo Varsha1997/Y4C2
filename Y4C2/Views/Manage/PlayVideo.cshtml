@@ -3,36 +3,43 @@
 @{
     ViewData["Title"] = "PlayVideo";
 }
-
+<!DOCTYPE>
 <title>Y4C</title>
+<body style="margin:0px;">
+    <br />
+    <br />
+    <center>
+        <h1>@Model.Title</h1>
+        <h4>@Model.Description</h4>
+    </center>
 
-<br />
-<br />
-<center>
-    <h1>@Model.Title</h1>
-    <h4>@Model.Description</h4>
-</center>
-<hr />
-<br />
-<center>
-<iframe width="560"
-        height="315"
-        src="@Model.Video"
-        frameborder="0"
-        allowfullscreen></iframe><br /><br /><hr />
-
-<iframe width="560"
-        height="100"
-        src="@Model.Audio"
-        frameborder="0"
-        allowfullscreen></iframe>
-<br />
+    <br />
+    <center>
+        <div >
+            <br /><br />
+            <iframe width="560"
+                    height="315"
+                    src="@Model.Video"
+                    frameborder="0"
+                    allowfullscreen
+                    marginheight="50"></iframe><br /><br />
+        </div>
+        <div style="background-color:#032b52">
+            <br /><br />
+            <iframe width="560"
+                    height="100"
+                    src="@Model.Audio"
+                    frameborder="0"
+                    allowfullscreen></iframe><br /><br />
+        </div>
 
 
+        <div style="background-color:#F8F8F8;padding:4px;">
+            <br /><br />
+            @Html.Raw(Model.BlogContent)
+        </div>
 
-<hr />
 
 
-@Html.Raw(Model.BlogContent)
-
-</center>
+    </center>
+</body>

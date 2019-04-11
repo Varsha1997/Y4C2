@@ -1,0 +1,163 @@
+﻿@model IEnumerable<Y4C2.Models.Account>
+
+@{
+    ViewData["Title"] = "AdminHome";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/SideNav.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/AdminHome.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<h2>AdminHome</h2>
+
+<body>
+
+    <!-- The sidebar -->
+    <div class="sidebar">
+        <a class="active" asp-controller="Manage" asp-action="AdminHome">Admin Home</a>
+        <a asp-controller="Manage" asp-action="AddContent">Create</a>
+        <a asp-controller="Manage" asp-action="ManageContent">Manage</a>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+        <div class="row">
+            <div class="column left">
+                <div class="cardChart" >
+                    <div class="containerChart">
+                        <div id="piechart" style="width:650px; height:300px; float:right;">
+                            
+                        </div>
+                        <script type="text/javascript">
+                            // Load google charts
+                            google.charts.load('current', { 'packages': ['corechart'] });
+                            google.charts.setOnLoadCallback(drawChart);
+
+                            // Draw the chart and set the chart values
+                            function drawChart() {
+                                var active = parseInt('@ViewBag.active', 10);
+                                var inactive = parseInt('@ViewBag.inactive', 10);
+                                var data = google.visualization.arrayToDataTable([
+                                    ['Status', 'Number of Themes'],
+                                    ['Active', active],
+                                    ['Inactive', inactive],
+                                    
+                                ]);
+
+                                // Optional; add a title and set the width and height of the chart
+                                var options = {
+                                    'title': 'Active & Inactive Posts',
+                                    
+                                    'colors': ['#00a38e', '#032b52'],
+                                    'is3D': true,
+                                    legend: { position: 'bottom' },
+                                    'titleTextStyle': {
+                                      color: '#032b52',
+                                      
+                                      fontSize: 20,
+                                      bold: true,
+                                      
+                                    }
+                                    
+                                    
+                                };
+
+                                // Display the chart inside the <div> element with id="piechart"
+                                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                                chart.draw(data, options);
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="column right">
+                <div class="cardRight">
+                    <div class="containerRight">
+                        <div><img src="https://vamdbapp.herokuapp.com/picture/user.png" class="icon"></div>
+
+                        <div class="number" style="color:#032b52;">@ViewBag.users</div>
+                    </div>
+                </div><br />
+                <div class="cardRight">
+                    <div class="containerRight">
+                        <div><img src="https://www.stiganmedia.com/wp-content/uploads/2017/08/landing-pages-2-1.png" class="icon"></div>
+
+                        <div class="number">@ViewBag.themes</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="cardMain">
+                <div class="containerMain">
+                    <center><h2 >Students</h2></center><br />
+                    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Username)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Dob)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TakenYogaClass)
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                if(item.RoleId == 0) { 
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Username)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Dob)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TakenYogaClass)
+                                    </td>
+
+                                </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+
