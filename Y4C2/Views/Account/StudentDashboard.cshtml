@@ -1,53 +1,48 @@
 ﻿@model System.Collections.Generic.IEnumerable<Y4C2.Models.AddContent>
 
 
-        @{
+@{
     ViewData["Title"] = "StudentDashboard";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/studentLayout.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<br />
+<div class="jumbotron">
+    <center><h2>Welcome To The Student Dashboard</h2></center>
+</div>
+
+<header class="masthead clear">
+    <div class="centered">
+
+        <!-- .site-title -->
+    </div>
+    <!-- .centered -->
+</header>
+<!-- .masthead -->
+<ul class="cards">
+    @foreach (var item in @Model)
+    {
+        if (item.ArchiveStatus == "Active")
+        {
+            <li class="cards-item">
+
+                <div class="card">
+                    <figure class="thumbnail">
+                        <img src="~/images/YogaImage.jpg" alt="Y4C">
+                    </figure>
+                    <div class="card-content">
+                        <div class="card-title">@item.Title</div>
+                        <p class="card-text">@item.Description</p>
+                        <a href="/Manage/PlayVideo/@item.Id" class="cards-button button-block"><span>Read</span></a>
+                    </div>
+                </div>
+            </li>
         }
+    }
+        </ul>
 
-        <link rel="stylesheet" href="~/css/studentLayout.css">
-        <br />
-        <br />
-        <br />
-        <header class="masthead clear">
-            <div class="centered">
-
-                <div class="site-branding">
-                    <h1 class="site-title">Welcome, </h1>
-                </div>
-                <!-- .site-title -->
-            </div>
-            <!-- .centered -->
-        </header>
-        <!-- .masthead -->
-
-        <main class="main-area">
-
-            <div class="centered">
-                @foreach (var item in @Model)
-                {
-                    if (item.ArchiveStatus == "Active")
-                    {
-                    <section class="cards">
-
-                        <article class="card">
-                            <a href="/Manage/PlayVideo/@item.Id">
-                                <figure class="thumbnail">
-                                    <img src="~/images/YogaImage.jpg" alt="Y4C">
-                                </figure>
-                                <div class="card-content">
-                                    <h2>@item.Title</h2>
-                                    <p> @item.Description</p>
-                                </div>
-                                <!-- .card-content -->
-                            </a>
-                        </article>
-                        <!-- .card -->
-                    </section>
-                    <!-- .cards -->
-                    }
-                }
-                </div>
- <!-- .centered -->
-
-</main>
+<!--Cards-->

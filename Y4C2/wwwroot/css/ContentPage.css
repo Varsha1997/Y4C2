@@ -1,0 +1,17 @@
+﻿h1{
+    color:#123;
+}
+
+body{
+    background-color:#fff;
+}
+
+iframe{
+    margin: 0 auto;
+    border: 10px double #ddd;
+   
+}
+
+.blog {
+    border: 5px double #ddd;
+}

@@ -1,137 +1,162 @@
-﻿body {
-    font-family: sans-serif;
+﻿*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-p {
-    color: #00A38E;
-    font-weight: bold;
-}
-
-h2 {
-    font-size: 2em;
-    color: #49B869;
-    font-weight: bold;
-}
-
-.centered {
-    margin: 0 auto;
-    padding: 0 1em;
-}
-
-@media screen and (min-width: 90em) {
-    .centered {
-        max-width: 70em;
-    }
-}
-
-/*--------------------------------------------------------------
-Header styles minus menu
---------------------------------------------------------------*/
-
-.masthead {
-    background: #00A38E;
-    box-shadow: 3px 3px 5px hsl(0, 0%, 70%);
-}
-
-.site-title {
-    margin: 0 0 1em;
-    padding: 1em 0;
-    font-size: 2em;
-    font-weight: 300;
-    text-align: left;
-    color: white;
-}
-
-
-@media screen and (min-width: 44.44em) {
-    .site-title {
-        font-size: 2em;
-    }
-}
-
-@media screen and (min-width: 50em) {
-    .site-title {
-        font-size: 2.5em;
-    }
-}
-
-.site-title a {
-    color: hsl(5, 45%, 95%);
-    text-decoration: none;
-}
-
-    .site-title a:hover {
-        text-decoration: underline;
-    }
-
-/* Card Based Layout - Base styles */
 body {
-    background: #ecf0f1;
-    line-height: 1.4;
+    
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #032b52;
 }
 
-.site-title {
-    color: white;
+.jumbotron {
+    text-align:center;
+    border-color:#123;
 }
 
-.card {
-    background: white;
-    margin-bottom: 2em;
+ol,
+ul {
+    list-style: none;
 }
 
-    .card a {
-        color: black;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.band {
+    height: auto;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 10px 50px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-top: none;
+    border-bottom: none;
+}
+
+    .band h1 {
+        margin-top: 10%;
+        font-size: 3rem;
+        color: #000000;
+        font-weight: 100;
+        letter-spacing: 0.25px;
+    }
+
+    .band p {
+        letter-spacing: 0.5px;
+        color: #484848;
+        font-size: 1.1rem;
+        padding-top: 0.75em;
+    }
+
+.band101 {
+    color: purple;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+}
+
+    .band101:hover {
+        text-decoration: underline;
+        color: purple;
+    }
+
+
+/*Cards*/
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+    .cards a:hover {
+        color: grey;
         text-decoration: none;
     }
 
-        .card a:hover {
-            box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
-        }
+.cards-item {
+    display: flex;
+    padding: 2rem;
+}
+
+@media (min-width: 40rem) {
+    .cards-item {
+        width: 50%;
+    }
+}
+
+@media (min-width: 56rem) {
+    .cards-item {
+        width: 33.3333%;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 2rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2em;
+    display: inherit;
+    width: 350px;
+}
+
+.card-image::before {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+}
+
+@media (min-width: 40rem) {
+    .card-image::before {
+        padding-top: 66.6%;
+    }
+}
+
+.card-image1 {
+    background-image: url(https://unsplash.it/800/600?image=82);
+}
 
 .card-content {
+    display: flex;
+    flex-direction: column;
     padding: 1.4em;
 }
 
-    .card-content h2 {
-        margin-top: 0;
-        margin-bottom: .5em;
-        font-weight: normal;
-    }
-
-    .card-content p {
-        font-size: 95%;
-    }
-
-
-
-/* Flexbox styles */
-@media screen and (min-width: 40em) {
-    .cards {
-        margin-top: -1em;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-    .card {
-        margin-bottom: 1em;
-        display: flex;
-        flex: 0 1 calc(50% - 0.5em);
-        /* width: calc(50% - 1em); */
-    }
+.card-title {
+    color: #032b52;
+    font-size: 2.2rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    text-align:center;
 }
-/* mq 40em*/
 
-@media screen and (min-width: 80em) {
-    .cards {
-        margin-top: inherit;
-    }
-
-    .card {
-        margin-bottom: 2em;
-        display: flex;
-        flex: 0 1 calc(33% - 0.5em);
-        /* width: calc(33% - 1em); */
-    }
+.card-text {
+    text-align:center;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    color: #032b52;
 }
-/* mq 60em*/
+
+.cards-button {
+    border-color: #123;
+    border: 2px solid;
+    color: #123;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.button-block {
+    display: block;
+    width: 100%;
+}
+
+
+/*Cards*/
