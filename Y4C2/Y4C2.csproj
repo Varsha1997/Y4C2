@@ -45,6 +45,9 @@
     <Content Remove="Areas\Identity\Pages\Account\Manage\SetPassword.cshtml" />
     <Content Remove="Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml" />
     <Content Remove="Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Remove="Views\Survey\Create.cshtml" />
+    <Content Remove="Views\Survey\CreateSurvey.cshtml" />
+    <Content Remove="Views\Survey\ViewSurvey.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,6 +57,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Identity\Services\" />
+    <Folder Include="Views\Survey\" />
     <Folder Include="wwwroot\vendor\" />
   </ItemGroup>
 
