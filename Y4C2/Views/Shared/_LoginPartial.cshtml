@@ -15,6 +15,17 @@
             </li>
         </ul>
     </form>
+    if (SignInManager.IsSignedIn(User))
+    {
+        
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="/Account/StudentDashboard">Student Dashboard</a>
+                </li>
+            </ul>
+        
+
+    }
 }
 else
 {

@@ -107,18 +107,18 @@
                         marginheight="50"></iframe><br /><br />
             </div>
             <br />
-            
+
             <div class="section2">
                 <h1>Audio Meditiation</h1>
-               
-                    <br /><br />
-                    <iframe width="1100"
-                            height="150"
-                            src="@Model.Audio"
-                            frameborder="0"
-                            allowfullscreen></iframe><br /><br />      
+
+                <br /><br />
+                <iframe width="1100"
+                        height="150"
+                        src="@Model.Audio"
+                        frameborder="0"
+                        allowfullscreen></iframe><br /><br />
             </div>
-            
+
 
             <div class="section3">
                 <h1>Blog Content</h1>
@@ -127,10 +127,20 @@
                     @Html.Raw(Model.BlogContent)
                 </div>
             </div>
-            
 
 
+            <button type="button" class="btn btn-light" onclick="return Back();">Back to dashboard</button>
         </div>
     </center>
+
+    <script language="javascript" type="text/javascript">
+
+        function Back() {
+            history.go(-1);
+            return false;
+
+        }
+    </script>
+
 </body>
 </html>
