@@ -185,7 +185,7 @@ a {
     transform: translateY(-50%) rotate(45deg);
 }
 
-[data-icon]:after {
+/*[data-icon]:after {
     content: attr(data-icon);
     font-family: 'FontAwesome';
     color: #fff;
@@ -204,7 +204,7 @@ a {
     -o-transform: rotate(-45deg) translateY(25%);
     -ms-transform: rotate(-45deg) translateY(25%);
     transform: rotate(-45deg) translateY(25%);
-}
+}*/
 
 .st-panel h2 {
     color: #00A38E;

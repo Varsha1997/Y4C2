@@ -146,8 +146,9 @@ iframe {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 15px;
-    background: #00A38E;
+    padding: 20px;
+    background-color: #00A38E;
+    /*border: 2px solid;*/
 }
 
 .wrap-login100 {
@@ -176,7 +177,7 @@ iframe {
   font-family: OpenSans-Regular;
   font-size: 30px;
   color: #555555;
-  line-height: 1.2;
+  line-height: 0.1;
   text-align: center;
 }
 
@@ -187,7 +188,6 @@ iframe {
   width: 100%;
   position: relative;
   background-color: #fff;
-  border: 1px solid #e6e6e6;
 }
 
 .wrap-input100.rs1 {
@@ -203,7 +203,7 @@ iframe {
   color: #666666;
   line-height: 1.2;
 }
-
+    
 
 /*---------------------------------------------*/
 input.input100 {

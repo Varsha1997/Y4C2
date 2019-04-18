@@ -65,7 +65,7 @@ namespace Y4C2.Areas.Identity.Pages.Account
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
+            [Display(Name = "Confirm Password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
@@ -74,7 +74,7 @@ namespace Y4C2.Areas.Identity.Pages.Account
             [DataType(DataType.Date, ErrorMessage = "Invalid Date of Birth")]
             public DateTime Dob { get; set; }
 
-            [Display(Name = "Have You Taken A Yoga 4 Change Class Before?")]
+            [Display(Name = "Have You Taken a Yoga 4 Change Class Before?")]
             [Required(ErrorMessage = "Response Required")]
             public string TakenYogaClass { get; set; }
         }
