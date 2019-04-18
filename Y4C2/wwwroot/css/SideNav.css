@@ -42,7 +42,7 @@
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
     margin-left: 150px;
-    padding: 60px 10px;
+    padding: 10px 10px;
     height: auto;
 }
 

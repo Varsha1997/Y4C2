@@ -75,6 +75,8 @@ namespace Y4C2.Controllers
 
         public ActionResult ManageContent()
         {
+           
+            
             return View(DBcontext.AC.ToList());
         }
 
@@ -125,6 +127,39 @@ namespace Y4C2.Controllers
 
         }
 
+
+        public ActionResult AdminHome()
+        {
+            var userCount = DBcontext.Account.Count();
+            var themeCount = DBcontext.AC.Count();
+            var activeThemes = 0;
+            var inactiveThemes = 0;
+
+            var themes = DBcontext.AC.ToList();
+
+            foreach (var item in themes)
+            {
+                if (item.ArchiveStatus == "Active")
+                {
+                    activeThemes = activeThemes + 1;
+                }
+                if (item.ArchiveStatus == "Inactive")
+                {
+                    inactiveThemes = inactiveThemes + 1;
+                }
+            }
+
+           
+            ViewBag.themes = themeCount;
+
+            ViewBag.users = userCount;
+
+            ViewBag.active = activeThemes;
+            
+            ViewBag.inactive = inactiveThemes;
+           
+            return View(DBcontext.Account.ToList());
+        }
 
 
     }

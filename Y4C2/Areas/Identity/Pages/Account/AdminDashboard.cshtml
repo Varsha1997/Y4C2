@@ -6,6 +6,7 @@
 
 @{
     ViewData["Title"] = "AdminDashboard";
+
 }
 
 <!DOCTYPE html>
@@ -38,12 +39,37 @@
         <a asp-controller="Manage" asp-action="ManageContent">Manage</a>
         
     </div>
-
+   
     <!-- Page content -->
     <div class="content">
-
+       
         <strong>Welcome, @UserManager.GetUserName(User) ! </strong>
-    </div>
+       
+        <div>
+            <p>
+                Number of Themes:@TempData["themes"]
+            </p>
+            <p>
+
+                @{
+                    var users = ViewBag.test;
+                <p>Number of users: @users</p>
+                }
+                </p>
+
+                <strong>
+                    Active Themes: @TempData["active"]
+                </strong>
+                <br />
+
+                Inactive Themes: @ViewBag.inactive
+                <br />
+                Testing Shit: @ViewBag.test
+
+
+            </div>
+        </div>
+    
     <!--<div class="footer">
         <div class="row">
             <div class="col-lg-12">
