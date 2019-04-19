@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Y4C2.Models;
 
 namespace Y4C2.Migrations
 {
     [DbContext(typeof(AddContentDBContext))]
-    partial class AddContentDBContextModelSnapshot : ModelSnapshot
+    [Migration("20190418180936_Update")]
+    partial class Update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,7 +87,7 @@ namespace Y4C2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("QuestionId");
+                    b.Property<int?>("QuestionId");
 
                     b.Property<string>("Response");
 
@@ -129,8 +131,6 @@ namespace Y4C2.Migrations
 
                     b.Property<int?>("ThemeId");
 
-                    b.Property<int>("addContentId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ThemeId");
@@ -142,8 +142,7 @@ namespace Y4C2.Migrations
                 {
                     b.HasOne("Y4C2.Models.Questions", "Question")
                         .WithMany("Answer")
-                        .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("QuestionId");
 
                     b.HasOne("Y4C2.Models.Account", "User")
                         .WithMany()

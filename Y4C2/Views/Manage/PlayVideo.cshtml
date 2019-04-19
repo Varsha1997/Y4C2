@@ -5,7 +5,7 @@
 }
 <!DOCTYPE>
 <title>Y4C</title>
-<body style="margin:0px;">
+<body >
     <br />
     <br />
     <center>
@@ -24,7 +24,7 @@
                     allowfullscreen
                     marginheight="50"></iframe><br /><br />
         </div>
-        <div style="background-color:#032b52">
+        <div >
             <br /><br />
             <iframe width="560"
                     height="100"
@@ -34,12 +34,17 @@
         </div>
 
 
-        <div style="background-color:#F8F8F8;padding:4px;">
+        <div style="padding:4px;">
             <br /><br />
             @Html.Raw(Model.BlogContent)
         </div>
-
-
-
+        
+        <div style="padding-top:3em;">
+            <form asp-controller="Manage" asp-action="PlayVideo" asp-method="Post" id="ThemeIDForm">
+                <input type="hidden" name="themeID" id="themeID" value="@Model.Id" />
+                <input type="submit" value="Back to Dashboard" class="btn btn-default" />
+            </form>
+            
+        </div>
     </center>
 </body>

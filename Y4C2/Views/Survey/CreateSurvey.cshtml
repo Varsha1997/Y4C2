@@ -1,0 +1,36 @@
+﻿<head>
+    <script src="~/js/Survey.js"></script>
+</head>
+
+
+<body style="padding-top:50px;">
+    <h2 align="center">Create Survey</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <label>
+                How many questions would you like to add to this survey?
+            </label>
+            <select id="Num" onchange="update(this);">
+                <option value="default" disabled selected>Choose Option</option>
+                <option id="oneQ" value="one"> 1 </option>
+                <option id="twoQ" value="two"> 2 </option>
+                <option id="threeQ" value="three"> 3 </option>
+            </select>
+            <br /><br />
+
+
+            <form asp-action="CreateSurvey" asp-method="Post">
+                <div id="SurveyQuestions"></div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>-->
+
+</body>

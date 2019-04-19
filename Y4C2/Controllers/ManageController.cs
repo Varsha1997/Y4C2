@@ -12,6 +12,8 @@ namespace Y4C2.Controllers
     public class ManageController : Controller
     {
         AddContentDBContext DBcontext;
+       
+
         public ManageController(AddContentDBContext context)
         {
             DBcontext = context;
@@ -39,11 +41,11 @@ namespace Y4C2.Controllers
             {
                 throw new Exception();
             }
-            return RedirectToAction(nameof(ManageContent), new { id = add.Id });
-            
+            return RedirectToAction("CreateSurvey", "Survey", new { id = add.Id });
+
         }
 
-        //public ViewResult PlayVideo() => View();
+        
 
         public ActionResult PlayVideo(int id)
         {
@@ -56,16 +58,15 @@ namespace Y4C2.Controllers
             return View(viewName: nameof(PlayVideo), model: video);
         }
 
-        public ActionResult Survey()
+        [HttpPost]
+        [ActionName("PlayVideo") ]
+        public ActionResult PlayVideoRedirect()
         {
-            ViewBag.Title = "Survey";
-            return View();
-        }
+            var ThemeId = Request.Form["themeID"].ToString();
 
-        public ActionResult CreateSurvey()
-        {
-            return View();
+            return RedirectToAction("CompleteSurvey","Survey", new { id = ThemeId});
         }
+     
 
         public ActionResult StudentDashboard()
         {
@@ -75,8 +76,6 @@ namespace Y4C2.Controllers
 
         public ActionResult ManageContent()
         {
-           
-            
             return View(DBcontext.AC.ToList());
         }
 

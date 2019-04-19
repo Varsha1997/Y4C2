@@ -20,6 +20,7 @@ namespace Y4C2.Models
         public string BlogTitle { get; set; }
         public string BlogAuthor { get; set; }
         public string ArchiveStatus { get; set; }
-        
+
+        public virtual IList<Survey> Survey { get; set; }
     }
 }

@@ -111,39 +111,7 @@ namespace Y4C2.Controllers
             //ViewBag.sessionv = HttpContext.Session.GetString("User");
             return View(DBcontext.AC.ToList());
         }
-        /*
-        public ActionResult AdminDashboard()
-        {
-            var userCount = DBcontext.Account.Count();
-            var themeCount = DBcontext.AC.Count();
-            var activeThemes = 0;
-            var inactiveThemes = 0;
-
-            var themes = DBcontext.AC.ToList();
-
-            foreach (var item in themes)
-            {
-                if (item.ArchiveStatus == "Active")
-                {
-                    activeThemes = activeThemes + 1;
-                }
-                if (item.ArchiveStatus == "Inactive")
-                {
-                    inactiveThemes = inactiveThemes + 1;
-                }
-            }
-
-            TempData["users"] = "usersmynigga";
-            ViewBag.themes = themeCount;
-            TempData["themes"] = themeCount;
-            ViewBag.active = activeThemes;
-            TempData["active"] = activeThemes;
-            ViewBag.inactive = inactiveThemes;
-            ViewBag.test = "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting";
-            TempData["test"]= "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting";
-            TempData.Keep();
-            return View();
-        } */
+        
 
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Y4C2.Models;
 
 namespace Y4C2.Migrations
 {
     [DbContext(typeof(AddContentDBContext))]
-    partial class AddContentDBContextModelSnapshot : ModelSnapshot
+    [Migration("20190418191258_DBFix")]
+    partial class DBFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -128,8 +130,6 @@ namespace Y4C2.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("ThemeId");
-
-                    b.Property<int>("addContentId");
 
                     b.HasKey("Id");
 

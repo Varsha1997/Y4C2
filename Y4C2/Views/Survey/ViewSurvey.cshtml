@@ -1,0 +1,89 @@
+﻿
+@model System.Collections.Generic.IEnumerable<Y4C2.Models.Questions>
+@{
+    ViewData["Title"] = "ViewSurvey";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/SideNav.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/AdminHome.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/Range.css" />
+    <script type="text/javascript" src="~/js/Range.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<h2>AdminHome</h2>
+
+<body>
+
+    <!-- The sidebar -->
+    <div class="sidebar">
+        <a class="active" asp-controller="Manage" asp-action="AdminHome">Admin Home</a>
+        <a asp-controller="Manage" asp-action="AddContent">Create</a>
+        <a asp-controller="Manage" asp-action="ManageContent">Manage</a>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+        <center>
+            <h3>Survey Review</h3>
+
+            @foreach (var item in @Model)
+            {
+
+                if (item.SurveyId == ViewBag.SurveyId)
+                {
+
+                    if (item.QNumber == 1)
+                    {
+                        <p>1. @item.Question</p>
+
+                        if (item.Type == "Text")
+                        {
+
+                            <textarea readonly rows="5" cols="50"></textarea><br /><br />
+                        }
+                        if (item.Type == "Rating")
+                        {
+                            <div class="slidecontainer">
+                                <input style="width:400px;" type="range" min="1" max="10" class="slider" id="myRangeOne">
+                            </div><br /><br />
+                        }
+                    }
+                    if (item.QNumber == 2)
+                    {
+                        <p>2. @item.Question</p>
+                        if (item.Type == "Text")
+                        {
+                            <textarea readonly rows="5" cols="50"></textarea><br /><br />
+                        }
+                        if (item.Type == "Rating")
+                        {
+                            <div class="slidecontainer">
+                                <input style="width:400px;" type="range" min="1" max="10" class="slider" id="myRangeTwo">
+                            </div><br /><br />
+                        }
+                    }
+                    if (item.QNumber == 3)
+                    {
+                        <p>3. @item.Question</p>
+                        if (item.Type == "Text")
+                        {
+                            <textarea readonly rows="5" cols="50"></textarea><br /><br />
+                        }
+                        if (item.Type == "Rating")
+                        {
+                            <div class="slidecontainer">
+                                <input style="width:400px;" type="range" min="1" max="10" class="slider" id="myRangeThree">
+                            </div><br /><br />
+                        }
+                    }
+                }
+            }
+
+            <input type="button" value="Back to Manage" class="btn btn-default" onclick="location.href='@Url.Action("ManageContent", "Manage")'" />
+
+            <br />
+        </center>
+    </div>
+    
+</body>

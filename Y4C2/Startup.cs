@@ -13,11 +13,16 @@ using Y4C2.Data;
 using Y4C2.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 
 namespace Y4C2
 {
     public class Startup
     {
+        public static readonly LoggerFactory MyLoggerFactory
+            = new LoggerFactory(new[] { new ConsoleLoggerProvider((_, __) => true, true) });
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -46,7 +51,11 @@ namespace Y4C2
             services.AddDistributedMemoryCache();
             services.AddSession();
             var con = "Data Source=yoga4change20181004115912dbserver.database.windows.net;Initial Catalog=AddContentDB;Integrated Security=False;User ID=n00931554;Password=John3:16;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            services.AddDbContext<AddContentDBContext>(options => options.UseSqlServer(con));
+            services.AddDbContext<AddContentDBContext>(options =>
+                options.UseSqlServer(con)
+                    .UseLoggerFactory(MyLoggerFactory)
+
+            );
 
         }
 

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Y4C2.Models;
 
 namespace Y4C2.Migrations
 {
     [DbContext(typeof(AddContentDBContext))]
-    partial class AddContentDBContextModelSnapshot : ModelSnapshot
+    [Migration("20190418001746_questionId")]
+    partial class questionId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,13 +91,9 @@ namespace Y4C2.Migrations
 
                     b.Property<string>("Response");
 
-                    b.Property<int?>("UserId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("QuestionId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Answer");
                 });
@@ -129,8 +127,6 @@ namespace Y4C2.Migrations
 
                     b.Property<int?>("ThemeId");
 
-                    b.Property<int>("addContentId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ThemeId");
@@ -144,10 +140,6 @@ namespace Y4C2.Migrations
                         .WithMany("Answer")
                         .HasForeignKey("QuestionId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Y4C2.Models.Account", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Y4C2.Models.Questions", b =>
