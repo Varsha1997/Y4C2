@@ -133,7 +133,7 @@ namespace Y4C2.Controllers
                 }
             }
 
-            TempData["users"] = "usersmynigga";
+            
             ViewBag.themes = themeCount;
             TempData["themes"] = themeCount;
             ViewBag.active = activeThemes;
